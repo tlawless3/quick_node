@@ -1,6 +1,7 @@
 import fs from 'fs'
 
 const dataPath = require('path').join(__dirname, '../data')
+const targetPath = require('path').join(__dirname, '../targetText')
 
 const createData = () => {
   const resultArr = []
@@ -20,6 +21,17 @@ const createData = () => {
   return resultArr
 }
 
+const grabTargetText = () => {
+  let resultStr = ''
+  fs.readdirSync(targetPath).forEach((file) => {
+    const fileData = fs.readFileSync(dataPath + '/' + file, 'utf-8')
+    resultStr += fileData
+  })
+  return resultStr
+}
+
+
 module.exports = {
-  createData
+  createData,
+  grabTargetText
 }

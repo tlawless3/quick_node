@@ -1,5 +1,9 @@
 import {
-  createData
+  createData,
+  grabTargetText
 } from './handleData'
 
-console.log(createData())
+// console.log(createData())
+// console.log(grabTargetText())
+
+const data = createData()

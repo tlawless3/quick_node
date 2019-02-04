@@ -1,1 +1,5 @@
-console.log('hello world')
+import {
+  createData
+} from './handleData'
+
+console.log(createData())
